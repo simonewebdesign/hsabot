@@ -2,7 +2,7 @@
 #   Reply with 'morning' when someone says 'morning', but only on the 3rd time.
 
 module.exports = (robot) ->
-  robot.respond /morning/i, (msg) ->
+  robot.hear /morning/i, (msg) ->
     numOfMornings = robot.brain.get('numOfMornings') * 1 or 0
     totalMornings = robot.brain.get('totalMornings') * 1 or 0
 
