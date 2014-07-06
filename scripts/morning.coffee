@@ -6,8 +6,9 @@ module.exports = (robot) ->
     numOfMornings = robot.brain.get('numOfMornings') * 1 or 0
     totalMornings = robot.brain.get('totalMornings') * 1 or 0
 
+    robot.brain.set numOfMornings: numOfMornings + 1
+    robot.brain.set totalMornings: totalMornings + 1
+
     if numOfMornings > 2
       msg.send "morning"
       robot.brain.set numOfMornings: 0
-
-    robot.brain.set totalMornings: totalMornings + 1
