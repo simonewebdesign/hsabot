@@ -12,3 +12,6 @@ module.exports = (robot) ->
     if robot.brain.get('numOfMornings') > 2
       msg.send "morning"
       robot.brain.set numOfMornings: 0
+
+  robot.respond /morning/i, (msg) ->
+    msg.reply "good morning"
