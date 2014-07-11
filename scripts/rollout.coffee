@@ -6,6 +6,7 @@
 # rolling out
 # rollout
 # roll out
+# roll  out
 # deploy
 # deploying to prod
 # rollin
@@ -14,12 +15,30 @@
 # DOES NOT MATCH:
 # roll
 # rill
-# roll  out
+# rollbar
 
 replies = [
   "(thumbsup)"
+  "yay"
 ]
 
 module.exports = (robot) ->
   robot.hear /((roll(.*)?(in|out))|deploy)/i, (msg) ->
-    msg.reply msg.random replies
+
+    d = new Date();
+    weekday = new Array(7)
+    weekday[0] = "Sunday"
+    weekday[1] = "Monday"
+    weekday[2] = "Tuesday"
+    weekday[3] = "Wednesday"
+    weekday[4] = "Thursday"
+    weekday[5] = "Friday"
+    weekday[6] = "Saturday"
+
+    today = weekday[d.getDay()]
+
+    if today == "Friday"
+      msg.send "Deploy on Friday?"
+      msg.send "http://cdn1.wordansassets.com/wvc-1334345743/wordansfiles/images/2012/4/13/137566/137566_340.jpg"
+    else
+      msg.send msg.random replies
