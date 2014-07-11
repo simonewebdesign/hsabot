@@ -17,11 +17,9 @@
 # roll  out
 
 replies = [
-  "Go for it!",
-  "OMG YES!",
-  "Yeah guys let's do it!"
+  "(thumbsup)"
 ]
 
 module.exports = (robot) ->
-  robot.hear /(roll(.*)?(in|out)|deploy)/i, (msg) ->
+  robot.hear /((roll(.*)?(in|out))|deploy)/i, (msg) ->
     msg.reply msg.random replies
