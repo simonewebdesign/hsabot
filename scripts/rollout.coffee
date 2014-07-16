@@ -19,7 +19,9 @@
 
 replies = [
   "(thumbsup)"
-  "yay"
+  "hmm"
+  "8)"
+  "wow"
 ]
 
 module.exports = (robot) ->
@@ -41,4 +43,6 @@ module.exports = (robot) ->
       msg.send "Deploy on Friday?"
       msg.send "http://cdn1.wordansassets.com/wvc-1334345743/wordansfiles/images/2012/4/13/137566/137566_340.jpg"
     else
-      msg.send msg.random replies
+      setTimeout ->
+        msg.send msg.random replies
+      , 8000
