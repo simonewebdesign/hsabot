@@ -22,6 +22,9 @@ replies = [
   "hmm"
   "8)"
   "wow"
+  "(content)"
+  "(doge)wow"
+  "(chompy)"
 ]
 
 module.exports = (robot) ->
